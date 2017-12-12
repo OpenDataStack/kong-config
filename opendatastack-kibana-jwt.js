@@ -11,9 +11,7 @@ module.exports = {
             "enabled": true,
             "config": {
               "key_claim_name": "iss",
-              "cookie_names": [
-                "jwt"
-              ],
+              "cookie_names": process.env.OPENDATASTACK_DKAN_API_PLUGIN_JWT_COOKIE_NAMES === undefined ? [ "Drupal.visitor.jwt" ] : process.env.OPENDATASTACK_DKAN_API_PLUGIN_JWT_COOKIE_NAMES,
               "secret_is_base64": false,
               "anonymous": "",
               "run_on_preflight": true
